@@ -35,7 +35,7 @@ end
 # Read the config YAML file
 config = nil
 File.open( $CONFIG_PATH, "r+" ) do |configfile|
-  config = YAML::load( configfile )
+  config = Psych.unsafe_load( configfile )
 end
 
 # Initialize configuration parameters
